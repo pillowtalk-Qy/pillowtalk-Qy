@@ -1,0 +1,4 @@
+profile/.proof-result.json
+game/node_modules/
+game/dist/
+.DS_Store

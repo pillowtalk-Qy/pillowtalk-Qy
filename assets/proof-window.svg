@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-labelledby="title desc">
+  <title id="title">Qy Proof of Acquaintance</title>
+  <desc id="desc">A shared cryptographic profile state with three proof vectors.</desc>
+  <style>
+    text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: 0; }
+    .eyebrow { font-size: 13px; font-weight: 700; }
+    .title { font-size: 31px; font-weight: 700; fill: #f3f4f7; }
+    .counter { font-size: 13px; fill: #a4a8b3; }
+    .micro { font-size: 11px; font-weight: 700; }
+    .panel-title { font-size: 18px; font-weight: 700; fill: #f3f4f7; }
+    .label { font-size: 11px; fill: #777c89; }
+    .value { font-size: 11px; fill: #d6d8df; }
+    .capsule { font-size: 13px; font-weight: 700; }
+    .digest { font-size: 10px; fill: #777c89; }
+    .ticker { font-size: 11px; fill: #b8bbc4; }
+    .blink { animation: blink 1.8s steps(2, end) infinite; }
+    @keyframes blink { 50% { opacity: .3; } }
+  </style>
+  <rect width="1200" height="500" fill="#070709"/>
+  <path d="M0 102H1200M0 428H1200" stroke="#242631"/>
+  <path d="M28 0V500M1172 0V500" stroke="#171821"/>
+  <path d="M28 132H1172M28 404H1172" stroke="#14151d" stroke-dasharray="3 7"/>
+  <text x="48" y="43" class="eyebrow" fill="#a767ff">Qy // PUBLIC CRYPTOGRAPHIC INTERFACE</text>
+  <text x="48" y="80" class="title">PROOF OF ACQUAINTANCE</text>
+  <text x="1152" y="43" class="counter" text-anchor="end">REV 0000 / 0 PROOFS</text>
+  <text x="1152" y="80" class="counter" text-anchor="end" fill="#6cbbff">DOSSIER SEALED // 0/2 DISTINCT VECTORS</text>
+  <circle cx="34" cy="43" r="3" fill="#66e3e8" class="blink"/>
+  
+  <g transform="translate(48 164)">
+    <rect width="350" height="224" fill="#0b0b11" stroke="#30333f"/>
+    <path d="M0 0H350M0 0V224" stroke="#a767ff" stroke-width="2"/>
+    <text x="20" y="30" class="micro" fill="#a767ff">VECTOR 01 // SELF-ATTESTED</text>
+    <text x="20" y="65" class="panel-title">OWNER SIGNATURE</text>
+    <text x="20" y="95" class="label">VERIFIER</text>
+    <text x="330" y="95" class="value" text-anchor="end">ED25519</text>
+    <text x="20" y="123" class="label">STATE</text>
+    <text x="330" y="123" class="value" text-anchor="end" fill="#a767ff">SEALED</text>
+    <text x="20" y="151" class="label">PROOFS</text>
+    <text x="330" y="151" class="value" text-anchor="end">0</text>
+    <line x1="20" x2="330" y1="170" y2="170" stroke="#30333f"/>
+    <text x="20" y="194" class="capsule" fill="#6f7380">ENCRYPTED CAPSULE</text>
+    <text x="20" y="214" class="digest">EVIDENCE ----------------</text>
+  </g>
+  <g transform="translate(430 164)">
+    <rect width="350" height="224" fill="#0b0b11" stroke="#30333f"/>
+    <path d="M0 0H350M0 0V224" stroke="#66e3e8" stroke-width="2"/>
+    <text x="20" y="30" class="micro" fill="#66e3e8">VECTOR 02 // PUBLIC ARTIFACT</text>
+    <text x="20" y="65" class="panel-title">PUBLIC ARTIFACT</text>
+    <text x="20" y="95" class="label">VERIFIER</text>
+    <text x="330" y="95" class="value" text-anchor="end">SHA256</text>
+    <text x="20" y="123" class="label">STATE</text>
+    <text x="330" y="123" class="value" text-anchor="end" fill="#66e3e8">SEALED</text>
+    <text x="20" y="151" class="label">PROOFS</text>
+    <text x="330" y="151" class="value" text-anchor="end">0</text>
+    <line x1="20" x2="330" y1="170" y2="170" stroke="#30333f"/>
+    <text x="20" y="194" class="capsule" fill="#6f7380">ENCRYPTED CAPSULE</text>
+    <text x="20" y="214" class="digest">EVIDENCE ----------------</text>
+  </g>
+  <g transform="translate(812 164)">
+    <rect width="350" height="224" fill="#0b0b11" stroke="#30333f"/>
+    <path d="M0 0H350M0 0V224" stroke="#6cbbff" stroke-width="2"/>
+    <text x="20" y="30" class="micro" fill="#6cbbff">VECTOR 03 // PSEUDONYMOUS PROOF</text>
+    <text x="20" y="65" class="panel-title">VISITOR HASHCASH</text>
+    <text x="20" y="95" class="label">VERIFIER</text>
+    <text x="330" y="95" class="value" text-anchor="end">HASHCASH</text>
+    <text x="20" y="123" class="label">STATE</text>
+    <text x="330" y="123" class="value" text-anchor="end" fill="#6cbbff">SEALED</text>
+    <text x="20" y="151" class="label">PROOFS</text>
+    <text x="330" y="151" class="value" text-anchor="end">0</text>
+    <line x1="20" x2="330" y1="170" y2="170" stroke="#30333f"/>
+    <text x="20" y="194" class="capsule" fill="#6f7380">ENCRYPTED CAPSULE</text>
+    <text x="20" y="214" class="digest">EVIDENCE ----------------</text>
+  </g>
+  <text x="48" y="460" class="ticker" fill="#66e3e8">LATEST //</text>
+  <text x="126" y="460" class="ticker">AWAITING FIRST VISITOR PROOF</text>
+  <text x="1152" y="460" class="ticker" text-anchor="end">PSEUDONYMOUS / PUBLIC GITHUB EVENTS</text>
+  <path d="M48 478H260" stroke="#a767ff" stroke-width="2"/><path d="M260 478H1152" stroke="#242631"/>
+</svg>

@@ -1,0 +1,60 @@
+name: Verify Profile Proof
+
+on:
+  issues:
+    types: [opened]
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: profile-proof
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    if: >-
+      github.actor != 'github-actions[bot]' &&
+      startsWith(github.event.issue.title, '[Qy-PROOF]') &&
+      (github.event_name == 'issues' || startsWith(github.event.comment.body, '/prove '))
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+      - name: Verify cryptographic input
+        id: proof
+        run: node profile/scripts/verify-proof.mjs
+      - name: Commit shared profile state
+        if: steps.proof.outputs.changed == 'true'
+        run: |
+          git config user.name "qy-proof-protocol[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add profile/state.json assets/proof-window.svg README.md
+          git commit -m "proof: accept ${{ steps.proof.outputs.status }} visitor evidence"
+          git push
+      - name: Publish protocol response
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const fs = require('node:fs');
+            const result = JSON.parse(fs.readFileSync('profile/.proof-result.json', 'utf8'));
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: result.body,
+            });
+            if (result.close) {
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                state: 'closed',
+                state_reason: 'completed',
+              });
+            }

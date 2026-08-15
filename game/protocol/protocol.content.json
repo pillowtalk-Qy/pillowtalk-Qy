@@ -1,0 +1,51 @@
+{
+  "protocolVersion": "ACQUAINTANCE/1.0",
+  "cypherpunk": {
+    "phrase": "PRIVACY IS THE POWER TO REVEAL YOURSELF SELECTIVELY",
+    "tokenOrder": ["YOURSELF", "PRIVACY", "POWER", "IS", "SELECTIVELY", "TO", "THE", "REVEAL"],
+    "capsule": {
+      "title": "THE RIGHT TO SELECT",
+      "project": "PROJECT//VEIL",
+      "field": "CYPHERPUNK THESIS",
+      "body": "Privacy is not disappearance. It is the power to decide which version of yourself crosses a boundary.",
+      "trace": "SELECTIVE DISCLOSURE / CONSENT / ANONYMITY"
+    }
+  },
+  "proof": {
+    "key": "POLICY 1049 / MINIMAL DISCLOSURE VERIFIED",
+    "capsule": {
+      "title": "MINIMUM NECESSARY",
+      "project": "PROJECT//NULLIFIER",
+      "field": "APPLIED CRYPTOGRAPHY",
+      "body": "I am interested in proofs that replace disclosure: systems where a fact can be verified without turning a person into a record.",
+      "trace": "GROTH16 / PRIVATE WITNESS / POLICY 1049"
+    }
+  },
+  "builder": {
+    "answer": "PRIVATE AGENT / EPHEMERAL MEMORY / USER-HELD KEY",
+    "options": [
+      "CLOUD AGENT / PERMANENT MEMORY / PLATFORM KEY",
+      "PRIVATE AGENT / EPHEMERAL MEMORY / USER-HELD KEY",
+      "SOCIAL AGENT / PUBLIC MEMORY / SHARED KEY"
+    ],
+    "capsule": {
+      "title": "INTELLIGENCE THAT FORGETS",
+      "project": "PROJECT//AMNESIA",
+      "field": "PRIVATE ARTIFICIAL INTELLIGENCE",
+      "body": "The useful agent is not the one that remembers everything. It is the one whose memory remains legible, revocable, and owned by the user.",
+      "trace": "LOCAL INFERENCE / EPHEMERAL MEMORY / USER-HELD KEY"
+    }
+  },
+  "final": {
+    "level": "TRUSTED READER / 2 OF 3",
+    "title": "I BUILD TO REMOVE UNNECESSARY TRUST.",
+    "body": "My work sits where private AI, cryptographic guarantees, and permissionless infrastructure meet. I care less about making systems appear trustworthy than making trust unnecessary, inspectable, and revocable.",
+    "frontiers": [
+      "AI agents whose memory belongs to the user",
+      "Zero-knowledge systems that disclose only what a decision requires",
+      "Permissionless infrastructure that preserves the right to exit"
+    ],
+    "openChannel": "PGP / ADD OWNER FINGERPRINT BEFORE DEPLOYMENT",
+    "finalLine": "You learned more without identifying yourself. The protocol held."
+  }
+}

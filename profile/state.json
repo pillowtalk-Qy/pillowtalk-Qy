@@ -1,0 +1,23 @@
+{
+  "revision": 0,
+  "totalProofs": 0,
+  "dossierUnlocked": false,
+  "routes": {
+    "owner-signature": {
+      "unlocked": false,
+      "proofs": 0,
+      "nullifiers": []
+    },
+    "artifact-hash": {
+      "unlocked": false,
+      "proofs": 0,
+      "nullifiers": []
+    },
+    "hashcash": {
+      "unlocked": false,
+      "proofs": 0,
+      "nullifiers": []
+    }
+  },
+  "events": []
+}

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#070709">
+  <meta name="description" content="Qy // NULL SELF: a cryptographic evidence observatory for an anonymous introduction.">
+  <title>Qy // NULL SELF // Cryptographic Evidence Observatory</title>
+</head>
+<body>
+  <div class="app-shell" data-session="unknown">
+    <header class="observatory-bar">
+      <a class="protocol-mark" href="#observatory" aria-label="Return to the observatory"><span>∅</span><strong>Qy//NULL SELF</strong></a>
+      <div class="observatory-title"><span>CRYPTOGRAPHIC EVIDENCE OBSERVATORY</span><code>DEMO SOURCES / REPLACE BEFORE DEPLOYMENT</code></div>
+      <div class="session-summary"><span id="session-state">UNKNOWN</span><strong id="session-fragments">0 / 2 KEYS</strong></div>
+    </header>
+
+    <main class="observatory" id="observatory">
+      <canvas id="evidence-canvas" aria-hidden="true"></canvas>
+      <div class="field-scanlines" aria-hidden="true"></div>
+      <svg class="connection-layer" id="connection-layer" aria-hidden="true"></svg>
+
+      <section class="entry-gate" id="entry-gate" aria-labelledby="entry-title">
+        <p>ANONYMOUS ACQUAINTANCE / EVIDENCE FIRST</p>
+        <h1 id="entry-title">Reconstruct a person<br>without collecting one.</h1>
+        <div class="entry-rule"><span>SELF-ATTESTED</span><span>PUBLIC ARTIFACT</span><span>UNRESOLVED</span></div>
+        <button class="command-button command-button-primary" id="begin-session" type="button"><i data-lucide="fingerprint" aria-hidden="true"></i><span>GENERATE EPHEMERAL VISITOR KEY</span></button>
+      </section>
+
+      <section class="graph-layer" aria-label="Cryptographic evidence graph">
+        <div id="claim-layer" aria-label="Public claims"></div>
+        <div id="evidence-layer" aria-label="Evidence objects"></div>
+        <div id="project-layer" aria-label="Decrypted project nodes"></div>
+      </section>
+
+      <aside class="evidence-inspector" id="evidence-inspector" aria-live="polite" data-open="false">
+        <div class="inspector-bar"><span>OBJECTIVITY LEDGER</span><button class="icon-button" id="close-inspector" type="button" title="Close evidence inspector"><i data-lucide="x" aria-hidden="true"></i></button></div>
+        <div class="inspector-empty" id="inspector-empty"><strong>NO EVIDENCE SELECTED</strong><span>SELECT AN OBJECT IN THE FIELD</span></div>
+        <div class="inspector-content" id="inspector-content" hidden>
+          <div class="grade-line"><span id="inspector-grade"></span><code id="inspector-id"></code></div>
+          <h2 id="inspector-title"></h2>
+          <dl>
+            <div><dt>SOURCE</dt><dd id="inspector-source"></dd></div>
+            <div><dt>SCOPE</dt><dd id="inspector-scope"></dd></div>
+            <div><dt>TARGET</dt><dd id="inspector-target"></dd></div>
+            <div><dt>RESULT</dt><dd id="inspector-result">NOT TESTED</dd></div>
+          </dl>
+          <code class="inspector-digest" id="inspector-digest"></code>
+        </div>
+      </aside>
+
+      <div class="evidence-legend" aria-label="Evidence classifications">
+        <span data-grade="SELF-ATTESTED">OWNER SIGNATURE</span>
+        <span data-grade="PUBLIC ARTIFACT">PUBLIC ARTIFACT</span>
+        <span data-grade="DEMO COMMITMENT">DEMO COMMITMENT</span>
+        <span data-grade="LOCAL PROOF">LOCAL PROOF</span>
+        <span data-grade="SOURCE MISSING">UNRESOLVED</span>
+      </div>
+
+      <div class="field-status" id="field-status">
+        <div><span>SESSION</span><code id="session-fingerprint">NO EPHEMERAL KEY</code></div>
+        <strong id="field-command">FIELD LOCKED</strong>
+        <div class="claim-resolution" id="claim-resolution"><span>AI / UNTESTED</span><span>CRYPTO / UNTESTED</span><span>EXIT / UNTESTED</span></div>
+      </div>
+
+      <button class="vault-trigger" id="vault-trigger" type="button" hidden><i data-lucide="unlock" aria-hidden="true"></i><span>2-OF-3 KEY MATERIAL READY</span><strong>DECRYPT DEEPER DOSSIER</strong></button>
+    </main>
+
+    <dialog class="protocol-dialog project-dialog" id="project-dialog">
+      <button class="dialog-close icon-button" type="button" data-close-dialog="project-dialog" title="Close project dossier"><i data-lucide="x" aria-hidden="true"></i></button>
+      <div class="dialog-meta"><span id="project-field"></span><code id="project-grade"></code></div>
+      <h2 id="project-title"></h2>
+      <p id="project-body"></p>
+      <div class="project-evidence-chain" id="project-evidence-chain"></div>
+      <div class="project-trace"><span>DECLASSIFIED NODE</span><strong id="project-name"></strong><code id="project-trace"></code></div>
+    </dialog>
+
+    <dialog class="protocol-dialog zk-dialog" id="zk-dialog">
+      <button class="dialog-close icon-button" type="button" data-close-dialog="zk-dialog" title="Close local prover"><i data-lucide="x" aria-hidden="true"></i></button>
+      <div class="dialog-meta"><span>LOCAL PROVER / POLICY 1049</span><code>PRIVATE WITNESS</code></div>
+      <h2>Prove this session disclosed less.</h2>
+      <div class="disclosure-list">
+        <label class="disclosure-row" data-disclosure-row="timezone"><span><strong>LOCAL TIMEZONE</strong><small>WITHHELD BY DEFAULT</small></span><code id="timezone-value">WITHHELD</code><input id="disclosure-timezone" type="checkbox" aria-label="Allow local timezone disclosure"></label>
+        <label class="disclosure-row" data-disclosure-row="viewport"><span><strong>SCREEN CLASS</strong><small>WITHHELD BY DEFAULT</small></span><code id="viewport-value">WITHHELD</code><input id="disclosure-viewport" type="checkbox" aria-label="Allow screen class disclosure"></label>
+        <label class="disclosure-row" data-disclosure-row="referrer"><span><strong>REFERRER ORIGIN</strong><small>WITHHELD BY DEFAULT</small></span><code id="referrer-value">WITHHELD</code><input id="disclosure-referrer" type="checkbox" aria-label="Allow referrer origin disclosure"></label>
+      </div>
+      <div class="proof-command"><span id="disclosure-count">0 / 3 SIGNALS</span><strong id="proof-status">READY / ONE SIGNAL MAXIMUM</strong><button class="command-button command-button-primary" id="generate-proof" type="button"><i data-lucide="shield-check" aria-hidden="true"></i>GENERATE GROTH16 PROOF</button></div>
+      <code class="proof-nullifier" id="proof-nullifier"></code>
+    </dialog>
+
+    <dialog class="protocol-dialog final-dialog" id="final-dialog">
+      <button class="dialog-close icon-button" type="button" data-close-dialog="final-dialog" title="Close final dossier"><i data-lucide="x" aria-hidden="true"></i></button>
+      <div class="dialog-meta"><span id="final-level"></span><code id="final-session"></code></div>
+      <h2 id="final-title"></h2>
+      <p id="final-body"></p>
+      <div class="frontier-list" id="frontier-list"></div>
+      <div class="final-verdict"><span>OPEN CHANNEL</span><strong id="final-channel"></strong><blockquote id="final-line"></blockquote></div>
+      <div class="session-proof"><span>EPHEMERAL SESSION SIGNATURE</span><code id="session-signature"></code><button class="icon-command" id="download-session" type="button"><i data-lucide="download" aria-hidden="true"></i><span>DOWNLOAD RECEIPT</span></button></div>
+    </dialog>
+
+    <div class="global-alert" id="alerts" role="status" aria-live="polite" hidden></div>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

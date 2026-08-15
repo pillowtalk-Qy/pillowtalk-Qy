@@ -1,0 +1,50 @@
+{
+  "protocol": "Qy-PROOF-OF-ACQUAINTANCE/1",
+  "repository": "pillowtalk-Qy/pillowtalk-Qy",
+  "nullifierDomain": "Qy::NULLIFIER::v1",
+  "routes": {
+    "owner-signature": {
+      "index": "01",
+      "label": "OWNER SIGNATURE",
+      "grade": "SELF-ATTESTED",
+      "kind": "ed25519",
+      "publicKey": "MCowBQYDK2VwAyEAQyPJgRgpTNpql9GRL1dUZdrpR+JefAObxMpqPYvNyTk=",
+      "message": "CLAIM-02|I build with cryptography, not promises.|ZERO KNOWLEDGE / APPLIED CRYPTO / PROTOCOLS",
+      "signature": "q6j/I4bzWWy3ETh3HHmnN03tVZyiVjX+6imlIJpFPkKx8pSEIgO9PAhjhbD6nIip7BHHPoiA7jApHcleqQGqBA==",
+      "capsule": {
+        "name": "CLEAR402",
+        "url": "https://github.com/pillowtalk-Qy/clear402",
+        "field": "AGENT-NATIVE SECURITY",
+        "description": "CAW-backed x402 guard and evidence workflow."
+      }
+    },
+    "artifact-hash": {
+      "index": "02",
+      "label": "PUBLIC ARTIFACT",
+      "grade": "PUBLIC ARTIFACT",
+      "kind": "sha256",
+      "path": "game/public/evidence/redacted_archive.circom",
+      "expectedHash": "425d81857a785f732367c11ba1c68f5fabfaaf77e0081070a08c1a627ae03e7d",
+      "capsule": {
+        "name": "INTENTFLOW INSPECTOR",
+        "url": "https://github.com/pillowtalk-Qy/intentflow-inspector",
+        "field": "INTENT INFRASTRUCTURE",
+        "description": "Inspect cross-chain intent quotes and settlement lifecycle."
+      }
+    },
+    "hashcash": {
+      "index": "03",
+      "label": "VISITOR HASHCASH",
+      "grade": "PSEUDONYMOUS PROOF",
+      "kind": "hashcash",
+      "domain": "Qy::HASHCASH::v1",
+      "difficulty": 3,
+      "capsule": {
+        "name": "ORIGINSHIFT // ACCRUE",
+        "url": "https://github.com/pillowtalk-Qy/OriginShift_Accrue",
+        "field": "PERMISSIONLESS FINANCE",
+        "description": "Restore time value to capital locked in prediction markets."
+      }
+    }
+  }
+}

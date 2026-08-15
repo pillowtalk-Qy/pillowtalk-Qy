@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>Qy // Hashcash Minter</title>
+    <style>
+      :root {
+        color: #f3f4f7;
+        background: #070709;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      }
+      * { box-sizing: border-box; }
+      body {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        background:
+          linear-gradient(#181821 1px, transparent 1px),
+          linear-gradient(90deg, #181821 1px, transparent 1px),
+          #070709;
+        background-size: 40px 40px;
+      }
+      main {
+        width: min(760px, 100%);
+        border: 1px solid #343541;
+        border-top: 2px solid #a767ff;
+        background: #0b0b11;
+      }
+      header, section, footer { padding: 24px; }
+      header { border-bottom: 1px solid #343541; }
+      h1 { margin: 6px 0 0; font-size: 42px; letter-spacing: 0; }
+      .eyebrow, dt { color: #a767ff; font-size: 12px; font-weight: 700; }
+      .signal { color: #66e3e8; }
+      dl { display: grid; grid-template-columns: 96px 1fr; gap: 12px; margin: 0 0 24px; }
+      dt, dd { margin: 0; overflow-wrap: anywhere; }
+      dd { color: #c7cad3; }
+      button, a.action {
+        min-height: 46px;
+        border: 1px solid #6cbbff;
+        background: #11131a;
+        color: #f3f4f7;
+        padding: 12px 16px;
+        font: inherit;
+        font-weight: 700;
+        cursor: pointer;
+        text-decoration: none;
+      }
+      button:hover, a.action:hover { background: #172333; }
+      button:disabled { cursor: wait; color: #747986; border-color: #343541; }
+      .actions { display: flex; flex-wrap: wrap; gap: 10px; }
+      output {
+        display: block;
+        min-height: 72px;
+        margin-top: 20px;
+        padding: 16px;
+        border-left: 2px solid #66e3e8;
+        background: #070709;
+        color: #9ce2a4;
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+      }
+      footer { border-top: 1px solid #343541; color: #747986; font-size: 11px; line-height: 1.6; }
+      [hidden] { display: none !important; }
+      @media (max-width: 520px) {
+        body { padding: 16px; }
+        header, section, footer { padding: 20px; }
+        h1 { font-size: 28px; }
+        dl { grid-template-columns: 1fr; gap: 6px; }
+        dt:not(:first-child) { margin-top: 8px; }
+        .actions { align-items: stretch; flex-direction: column; }
+        button, a.action { width: 100%; text-align: center; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="eyebrow">Qy // VISITOR PROOF TERMINAL</div>
+        <h1>HASHCASH <span class="signal">MINTER</span></h1>
+      </header>
+      <section>
+        <dl>
+          <dt>SUBJECT</dt><dd id="actor">MISSING</dd>
+          <dt>DOMAIN</dt><dd>Qy::HASHCASH::v1</dd>
+          <dt>TARGET</dt><dd>SHA-256 digest begins <b>000</b> / 12-bit work</dd>
+          <dt>PRIVACY</dt><dd>Pseudonymous proof. Your public GitHub account remains visible.</dd>
+        </dl>
+        <div class="actions">
+          <button id="mint" type="button">MINT PROOF</button>
+          <button id="copy" type="button" hidden>COPY COMMAND</button>
+          <a id="return" class="action" hidden>RETURN TO ISSUE</a>
+        </div>
+        <output id="output">READY // waiting for local computation</output>
+      </section>
+      <footer>
+        The nonce is computed in this browser. No biography, wallet address, or device fingerprint is requested. The GitHub Action independently recomputes the digest before changing the profile.
+      </footer>
+    </main>
+    <script type="module">
+      const params = new URLSearchParams(location.search);
+      const actor = params.get("actor")?.trim().toLowerCase() || "";
+      const issue = params.get("issue")?.trim() || "";
+      const actorNode = document.querySelector("#actor");
+      const mintButton = document.querySelector("#mint");
+      const copyButton = document.querySelector("#copy");
+      const returnLink = document.querySelector("#return");
+      const output = document.querySelector("#output");
+      const encoder = new TextEncoder();
+      let command = "";
+
+      actorNode.textContent = actor ? `@${actor}` : "MISSING FROM CHALLENGE LINK";
+      mintButton.disabled = !actor;
+      if (issue && /^\d+$/.test(issue)) {
+        returnLink.href = `https://github.com/pillowtalk-Qy/pillowtalk-Qy/issues/${issue}`;
+        returnLink.hidden = false;
+      }
+
+      const digest = async (nonce) => {
+        const input = `Qy::HASHCASH::v1::${actor}::${nonce}`;
+        const bytes = await crypto.subtle.digest("SHA-256", encoder.encode(input));
+        return [...new Uint8Array(bytes)]
+          .map((value) => value.toString(16).padStart(2, "0"))
+          .join("");
+      };
+
+      mintButton.addEventListener("click", async () => {
+        mintButton.disabled = true;
+        copyButton.hidden = true;
+        let nonce = 0;
+        while (true) {
+          const hash = await digest(nonce);
+          if (hash.startsWith("000")) {
+            command = `/prove ${nonce}`;
+            output.textContent = `PROOF MINTED\nNONCE   ${nonce}\nDIGEST  ${hash}\nCOMMAND ${command}`;
+            copyButton.hidden = false;
+            mintButton.textContent = "MINTED";
+            break;
+          }
+          nonce += 1;
+          if (nonce % 250 === 0) {
+            output.textContent = `MINING // ${nonce} candidates tested`;
+            await new Promise((resolve) => requestAnimationFrame(resolve));
+          }
+        }
+      });
+
+      copyButton.addEventListener("click", async () => {
+        await navigator.clipboard.writeText(command);
+        copyButton.textContent = "COPIED";
+      });
+    </script>
+  </body>
+</html>
