@@ -35,7 +35,7 @@ npm run preview
 | `LOCAL PROOF` | A browser-generated Groth16 proof satisfies policy `1049`. | Any fact about the owner's biography. |
 | `SOURCE MISSING` | No configured source can resolve the claim. | Nothing; the claim remains unresolved. |
 
-The included data is deliberately labeled `DEMO SOURCES / REPLACE BEFORE DEPLOYMENT` until real repositories, signed releases, deployments, or chain records are configured.
+The public interface is labeled `PUBLIC EVIDENCE / VERIFY LOCALLY`. Each evidence object still declares its own grade and scope; a demo commitment is never presented as independent proof.
 
 ## Customize encrypted content
 
