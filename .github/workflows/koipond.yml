@@ -16,7 +16,7 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - uses: pillowtalk-Qy/koipond@ff388c7ccaa5eef9da8e375f9c6362083668a4b9
+      - uses: pillowtalk-Qy/koipond@a2e5594062ea6411f4a67180c0d913c9adbb961b
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
