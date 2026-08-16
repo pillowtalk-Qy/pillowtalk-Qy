@@ -1,0 +1,30 @@
+name: koipond
+
+on:
+  schedule:
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: koipond
+  cancel-in-progress: true
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: pillowtalk-Qy/koipond@7f34d265a11b488c3eb472a4b4bd6bbe975c1d49
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/koipond-light.svg
+            dist/koipond-dark.svg?theme=dark
+      - uses: crazy-max/ghaction-github-pages@df5cc2bfa78282ded844b354faee141f06b41865 # v4
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
