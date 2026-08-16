@@ -16,15 +16,13 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - uses: pillowtalk-Qy/koipond@6936d05189b8723aed115ee5fdfd7cdc94a0e07c
+      - uses: pillowtalk-Qy/koipond@011f1fc5e62b6966bf697e59f4af89e9ae5e9290
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/koipond-light.svg?environment=auto&timezone=480&latitude=22.3193&longitude=114.1694
-            dist/koipond-dark.svg?theme=dark&environment=auto&timezone=480&latitude=22.3193&longitude=114.1694
-      - uses: crazy-max/ghaction-github-pages@df5cc2bfa78282ded844b354faee141f06b41865 # v4
+            dist/koipond.svg?environment=auto&timezone=480&latitude=22.3193&longitude=114.1694
+      - uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4.1.0
         with:
-          target_branch: output
-          build_dir: dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: output
+          publish_dir: ./dist
