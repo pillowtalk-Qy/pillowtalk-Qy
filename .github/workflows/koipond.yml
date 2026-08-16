@@ -16,12 +16,12 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - uses: pillowtalk-Qy/koipond@7f34d265a11b488c3eb472a4b4bd6bbe975c1d49
+      - uses: pillowtalk-Qy/koipond@fb97d7622f6d543c240db595196b17868353c59e
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/koipond-light.svg
-            dist/koipond-dark.svg?theme=dark
+            dist/koipond-light.svg?environment=auto&timezone=480&latitude=22.3193&longitude=114.1694
+            dist/koipond-dark.svg?theme=dark&environment=auto&timezone=480&latitude=22.3193&longitude=114.1694
       - uses: crazy-max/ghaction-github-pages@df5cc2bfa78282ded844b354faee141f06b41865 # v4
         with:
           target_branch: output
