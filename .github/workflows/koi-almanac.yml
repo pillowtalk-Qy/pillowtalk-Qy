@@ -1,4 +1,4 @@
-name: koipond
+name: koi-almanac
 
 on:
   schedule:
@@ -9,18 +9,18 @@ permissions:
   contents: write
 
 concurrency:
-  group: koipond
+  group: koi-almanac
   cancel-in-progress: true
 
 jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - uses: pillowtalk-Qy/koipond@94889cb408c2c86272702ca98404f8ed8951ebc5
+      - uses: pillowtalk-Qy/koi-almanac@e87abde44224bc375b8a62ca5791865ab98c78d0
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/koipond.svg?environment=auto&timezone=480&latitude=22.3193&longitude=114.1694
+            dist/koi-almanac.svg?environment=auto&timezone=480&latitude=22.3193&longitude=114.1694
       - uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4.1.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
