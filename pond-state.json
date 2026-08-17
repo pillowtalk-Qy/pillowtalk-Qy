@@ -2,14 +2,14 @@
   "version": 2,
   "owner": "pillowtalk-Qy",
   "seed": "pillowtalk-Qy",
-  "revision": 13,
+  "revision": 14,
   "updatedOn": "2026-08-17",
   "fish": [
     {
       "key": "pillowtalk-qy-0-ffc9f3",
       "species": "koi",
       "baseSize": 1.1466672458520213,
-      "lifetimeEnergy": 189,
+      "lifetimeEnergy": 192,
       "bornOn": "2025-10-01",
       "lastFedOn": "2026-08-17"
     }
@@ -380,10 +380,10 @@
     "2026-08-14": 0,
     "2026-08-15": 1,
     "2026-08-16": 7,
-    "2026-08-17": 4
+    "2026-08-17": 7
   },
   "lastDelta": {
-    "2026-08-17": 2
+    "2026-08-17": 3
   },
   "generator": {
     "repository": "pillowtalk-Qy/koi-almanac",
@@ -391,8 +391,8 @@
   },
   "proof": {
     "algorithm": "sha256",
-    "sourceDigest": "acfcdef283fc2db134c6aca350b6a1b2692aa4baad6ef3bb6f0cb01ea99f7329",
-    "previousDigest": "19472ded0dbfb42f5d2d7f81c174312cc3e2ffbc79f7572ec1e63b7821882086",
-    "digest": "602409a070379cab09eaebe843a5a211ed4667cfeedd656a1fa8834468887f8d"
+    "sourceDigest": "a597629824e93826fd729e18453e718bde08c2ef12f983ac4a0fbb5978952401",
+    "previousDigest": "602409a070379cab09eaebe843a5a211ed4667cfeedd656a1fa8834468887f8d",
+    "digest": "6152329f45a6105a3fa83d7a2686519d7cd3223d469ac8e0988afa0ba0e7bec6"
   }
 }
