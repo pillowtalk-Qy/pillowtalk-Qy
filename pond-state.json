@@ -2,7 +2,7 @@
   "version": 2,
   "owner": "pillowtalk-Qy",
   "seed": "pillowtalk-Qy",
-  "revision": 11,
+  "revision": 12,
   "updatedOn": "2026-08-17",
   "fish": [
     {
@@ -384,13 +384,13 @@
   },
   "lastDelta": {},
   "generator": {
-    "repository": "pillowtalk-Qy/koipond",
-    "sha": "94889cb408c2c86272702ca98404f8ed8951ebc5"
+    "repository": "pillowtalk-Qy/koi-almanac",
+    "sha": "e87abde44224bc375b8a62ca5791865ab98c78d0"
   },
   "proof": {
     "algorithm": "sha256",
     "sourceDigest": "a59051e7cbc9258214d64154f46d579a17f5202a33024a460dee4ff139866b72",
-    "previousDigest": "b2986ccc52b764e8d8c2d0b8b5beca5f07fe7a9f4731de475c10c2344115fb5a",
-    "digest": "ad4c101b991d18b819c153b1bc52bb305efb0c7af0a9b7aa8f140fe6f1e75f50"
+    "previousDigest": "ad4c101b991d18b819c153b1bc52bb305efb0c7af0a9b7aa8f140fe6f1e75f50",
+    "digest": "19472ded0dbfb42f5d2d7f81c174312cc3e2ffbc79f7572ec1e63b7821882086"
   }
 }
