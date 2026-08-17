@@ -2,14 +2,14 @@
   "version": 2,
   "owner": "pillowtalk-Qy",
   "seed": "pillowtalk-Qy",
-  "revision": 9,
+  "revision": 10,
   "updatedOn": "2026-08-17",
   "fish": [
     {
       "key": "pillowtalk-qy-0-ffc9f3",
       "species": "koi",
       "baseSize": 1.1466672458520213,
-      "lifetimeEnergy": 186,
+      "lifetimeEnergy": 187,
       "bornOn": "2025-10-01",
       "lastFedOn": "2026-08-17"
     }
@@ -380,15 +380,15 @@
     "2026-08-14": 0,
     "2026-08-15": 1,
     "2026-08-16": 7,
-    "2026-08-17": 1
+    "2026-08-17": 2
   },
   "lastDelta": {
     "2026-08-17": 1
   },
   "proof": {
     "algorithm": "sha256",
-    "sourceDigest": "6e65996440ca197fa2c4c31464d80b2674443b344f2145d92f5070531e7922e2",
-    "previousDigest": "c87f00e88e22f8cd340ef37b916953139a5f999615ff2b025acb347bac45332c",
-    "digest": "006feb6f841b872693fc09cc5b3891bdf65605bff086be1a61c8389b0207b542"
+    "sourceDigest": "a59051e7cbc9258214d64154f46d579a17f5202a33024a460dee4ff139866b72",
+    "previousDigest": "006feb6f841b872693fc09cc5b3891bdf65605bff086be1a61c8389b0207b542",
+    "digest": "b2986ccc52b764e8d8c2d0b8b5beca5f07fe7a9f4731de475c10c2344115fb5a"
   }
 }
