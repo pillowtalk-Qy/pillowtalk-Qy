@@ -2,8 +2,8 @@
   "version": 2,
   "owner": "pillowtalk-Qy",
   "seed": "pillowtalk-Qy",
-  "revision": 21,
-  "updatedOn": "2026-08-18",
+  "revision": 22,
+  "updatedOn": "2026-08-19",
   "fish": [
     {
       "key": "pillowtalk-qy-0-ffc9f3",
@@ -381,19 +381,18 @@
     "2026-08-15": 1,
     "2026-08-16": 7,
     "2026-08-17": 7,
-    "2026-08-18": 2
+    "2026-08-18": 2,
+    "2026-08-19": 0
   },
-  "lastDelta": {
-    "2026-08-18": 1
-  },
+  "lastDelta": {},
   "generator": {
     "repository": "pillowtalk-Qy/koi-almanac",
     "sha": "cdc83889163a4f9dcd02fb3089ef3ecb9824f097"
   },
   "proof": {
     "algorithm": "sha256",
-    "sourceDigest": "5a9631f55b517ed870e9eca9893d90f0d8c69be80cdf6218ccf2af154520b70c",
-    "previousDigest": "33bdbbf0b0fe0d38a202eb3c9352b666095638941aae71c52cd1f3a39557c623",
-    "digest": "36c237e52d485a36c80777a504376f318202d833c6469589747108f76702cb72"
+    "sourceDigest": "6e72ea546b501863e4afdf0d2944df5272a81fb5acc12e12bf8d52b72e4bd3ea",
+    "previousDigest": "36c237e52d485a36c80777a504376f318202d833c6469589747108f76702cb72",
+    "digest": "47c960135ac47dbc4a8be579146998b5df1462ada16aac49864c56a9167cc70f"
   }
 }
