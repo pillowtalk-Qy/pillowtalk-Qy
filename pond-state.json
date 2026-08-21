@@ -2,8 +2,8 @@
   "version": 2,
   "owner": "pillowtalk-Qy",
   "seed": "pillowtalk-Qy",
-  "revision": 23,
-  "updatedOn": "2026-08-20",
+  "revision": 24,
+  "updatedOn": "2026-08-21",
   "fish": [
     {
       "key": "pillowtalk-qy-0-ffc9f3",
@@ -383,7 +383,8 @@
     "2026-08-17": 7,
     "2026-08-18": 2,
     "2026-08-19": 0,
-    "2026-08-20": 0
+    "2026-08-20": 0,
+    "2026-08-21": 0
   },
   "lastDelta": {},
   "generator": {
@@ -392,8 +393,8 @@
   },
   "proof": {
     "algorithm": "sha256",
-    "sourceDigest": "5d022b69a49114952354ded85696facd6f309d782f2f34556fb2f74ff0202d83",
-    "previousDigest": "47c960135ac47dbc4a8be579146998b5df1462ada16aac49864c56a9167cc70f",
-    "digest": "c2bc832ab7f57a64d843818013751b22c6120fa6de37d5ee4049ff3e9faedba1"
+    "sourceDigest": "649f80904294541af6b9e1a95cd702809bf2b87078515dc42d5eaae8bdc8bc90",
+    "previousDigest": "c2bc832ab7f57a64d843818013751b22c6120fa6de37d5ee4049ff3e9faedba1",
+    "digest": "cc835e1920fad65f1edf3e8c9904b8c14413a37f9740ee511f0bee2d90a75f56"
   }
 }
