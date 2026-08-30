@@ -2,8 +2,8 @@
   "version": 2,
   "owner": "pillowtalk-Qy",
   "seed": "pillowtalk-Qy",
-  "revision": 32,
-  "updatedOn": "2026-08-29",
+  "revision": 33,
+  "updatedOn": "2026-08-30",
   "fish": [
     {
       "key": "pillowtalk-qy-0-ffc9f3",
@@ -15,13 +15,6 @@
     }
   ],
   "snapshot": {
-    "2025-08-24": 0,
-    "2025-08-25": 0,
-    "2025-08-26": 0,
-    "2025-08-27": 0,
-    "2025-08-28": 0,
-    "2025-08-29": 0,
-    "2025-08-30": 0,
     "2025-08-31": 0,
     "2025-09-01": 0,
     "2025-09-02": 0,
@@ -385,7 +378,8 @@
     "2026-08-26": 0,
     "2026-08-27": 0,
     "2026-08-28": 0,
-    "2026-08-29": 0
+    "2026-08-29": 0,
+    "2026-08-30": 0
   },
   "lastDelta": {},
   "generator": {
@@ -394,8 +388,8 @@
   },
   "proof": {
     "algorithm": "sha256",
-    "sourceDigest": "0e0a87eba7842946558555526f5dccc5d44e23dd9737d59ad39c8b0659efc97a",
-    "previousDigest": "8ff6e547dedb60c63370156471100c9dbd49bde6f3e4e1e0632467364361b662",
-    "digest": "711b2dd32fe5c90cdc5c8c3685e7fcd75d356ff0364237b6470f6f17ea8afa6c"
+    "sourceDigest": "0300244f24e9c120b4f5b5b810220391df4ee1f832b8106e862dafce3cbb9fe5",
+    "previousDigest": "711b2dd32fe5c90cdc5c8c3685e7fcd75d356ff0364237b6470f6f17ea8afa6c",
+    "digest": "3b39754a24d964adc78317273557b0ae487a0e100892405f6da4716d32a41662"
   }
 }
